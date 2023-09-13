@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors </title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="index2.css">
+    <!-- FABICON -->
+    <link rel="icon" type="image" href="https://cdn-icons-png.flaticon.com/128/6690/6690115.png">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+     <!-- ANIMATION -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+     <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="container-fluid navbar navbar-expand-md justify-content-center" style="background-color: rgba(0, 0, 0, 0);">
+        <a class="heading-1 navbar-brand pt-4 animate__animated animate__rubberBand" style="color: #2e76dc; font-size: 50px;" href="index.html"><b>Play <span style="color: rgb(232, 48, 48);">RPS</b></a>
+        <div class="login d-inline-flex">
+            <a href="#" >
+            <button id="buttonforms" type="button" class="btn">
+            <img src="https://cdn-icons-png.flaticon.com/128/2731/2731754.png" class="acc ms-4 mt-2" style="width: 62px; height:52px;"></button></a>
+        </div>
+    </nav>
+   
+    <!-- INSTRUCTIONS -->
+    <div class="container-fluid instruct text-center">
+        <h3 class="m-2">Welcome to Play RPS! This is a simple game of Rock, Paper, Scissors where you get to battle with your computer. There are 5 rounds in total, the one who gets the most points in the end wins the game ! </h3> 
+    </div>
+    <br>
+
+    <!-- <center>
+        <div id="result-final"></div>
+    </center> -->
+
+     <!-- GAME verryy wrong way putting class/id-->
+    <div class="row mr-0 mx-0">
+        <div class="col-md-6 ">
+            <div class="col-md-12 gaming-box">
+                <div class="game container-fluid">
+                    <div class="row justify-content-center ">
+                        <button class="options3 btn mx-3 my-1"  id="rock" style="width: 100px; background-color: #eb473f;">
+                            <img class="options " id="rock" src="https://cdn-icons-png.flaticon.com/128/6027/6027366.png" style="height: 50px; width: 50px;">
+                            <!-- <p class="d-inline-flex m-2">Rock</p> -->
+                        </button>
+                        
+                        <button class="options3 btn mx-3 my-1" id= "paper" style="width: 100px; background-color: #eb473f;" >
+                            <img class="options" id= "paper"  src="https://cdn-icons-png.flaticon.com/128/8476/8476229.png" style="height: 50px; width: 50px;" >
+                            <!-- <p class="d-inline-flex m-2">Paper</p> -->
+                        </button>
+
+                        <button class="options3 btn mx-3 my-1" id= "scissors" style="width: 100px; background-color: #eb473f;">
+                            <img class="options" id= "scissors" src="https://cdn-icons-png.flaticon.com/128/732/732406.png" style="height: 50px; width: 50px;" >
+                            <!-- <p class="d-inline-flex m-2">Scissor</p> -->
+                        </button>
+                    </div><br><br><br>
+
+                <div class="row justify-content-center" style="margin-top: -40px;">
+                    <div id="compChoice" class="col-md-5 text-center img-fluid me-2" style="height: 250px; width: 250px;">
+                        <img src="rock.png" class="player animate__animated animate__rotateInDownLeft img-fluid" style="height: 250px; width: 250px;">
+                        <!-- <h1 id="compChoice" style="margin-top: -40px;">Rock</h1> -->
+                    </div> 
+                    <div id="userChoice" class="col-md-7 text-center img-fluid me-2" style="height: 250px; width: 250px;">
+                        <img  src="scissors.png" class="player animate__animated animate__rotateInDownRight img-fluid"  style="height: 250px; width: 250px;">
+                        <!-- <h1 id="userChoice" style="margin-top: -40px;">Scissors</h1> -->
+                    </div>
+                    <h1 id="result" class="text-center"></h1>
+                    <br>
+                </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <!-- SCOREBOARD -->
+                <div class="scoreboard container text-center">
+                    <h3 class="text-decoration-underline">Scoreboard</h3>
+                    <div class="row">
+                        <div class="col-1"></div>
+                            <h4><span style="color: #b81212;">Computer</span> VS <span style="color: #2755b0;">Player</span></h4>
+                        </div>
+                        <div class="text-center">
+                            <h1><span id="c-score">0 </span> - <span id="p-score"> 0 </span></h1>
+                        </div>
+                
+                </div>
+            
+                <br>
+            </div>
+
+            <div class="col-md-12">
+                <!-- MATCH HISTORY -->
+                <div class="match container text-center">
+                    <h2 class="text-decoration-underline">Match History</h2>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <h4>Computer</h4>
+                            <hr> 
+                            <!-- <ul id="comp-list" class="mt-4"></ul> -->
+                            <div id="comp-list" class=""></div>
+                        </div>
+                        <div class="col">
+                            <h4>Player</h4>
+                            <hr> 
+                            <div id="player-list" class=""></div>
+                        </div>
+                        <div class="col">
+                            <h4>Result</h4>
+                            <hr> 
+                            <div id="match-list" class="mb-5"></div>
+                        </div>
+                    </div>
+                    <hr> 
+                    <!-- <div class="col">
+                        <ul id="match-list" class="bg-primary"></ul>
+                    </div> -->
+                </div>
+            <br>
+
+                <!-- RESET -->
+                <center>
+                <button onclick="reset();" id="reset" class="options2 btn mx-3 my-1" style="width: 100px; background-color: #eb473f; " type="button">
+                    <img src="https://cdn-icons-png.flaticon.com/128/9908/9908185.png" style="height: 50px; width: 50px;" >
+                </button>
+                </center>
+            </div>
+        </div>
+        <br>
+    </div>
+    
+    <!-- FOOTER -->
+    <div class="footer container" style="text-align: center;">
+        <div class="col p-4">
+          <ul>
+            <p>© All rights go to their respectful owners.</p>
+          </ul>
+        </div>
+    </div>
+
+    <!-- <div id="pow-img" style="background-image: url('pow.png');">heyyyy</div>
+    <br> -->
+    
+
+    <script src="index.js"></script>
+</body>
+</html>
